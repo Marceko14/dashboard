@@ -1,49 +1,132 @@
-<div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1>404 Error Page</h1>
-          </div>
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">404 Error Page</li>
-            </ol>
-          </div>
-        </div>
-      </div><!-- /.container-fluid -->
-    </section>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Main content -->
-    <section class="content">
-      <div class="error-page">
-        <h2 class="headline text-warning"> 404</h2>
+    <title>Gentelella Alela! | </title>
 
-        <div class="error-content">
-          <h3><i class="fas fa-exclamation-triangle text-warning"></i> Oops! Page not found.</h3>
+    <!-- Bootstrap -->
+    <link href="./vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="./vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="./vendors/nprogress/nprogress.css" rel="stylesheet">
 
-          <p>
-            We could not find the page you were looking for.
-            Meanwhile, you may <a href="../../index.html">return to dashboard</a> or try using the search form.
-          </p>
+    <!-- Custom Theme Style -->
+    <link href="./build/css/custom.min.css" rel="stylesheet">
+  </head>
 
-          <form class="search-form">
-            <div class="input-group">
-              <input type="text" name="search" class="form-control" placeholder="Search">
-
-              <div class="input-group-append">
-                <button type="submit" name="submit" class="btn btn-warning"><i class="fas fa-search"></i>
-                </button>
+  <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+        <!-- page content -->
+        <div class="col-md-12">
+          <div class="col-middle">
+            <div class="text-center text-center">
+              <h1 class="error-number">404</h1>
+              <h2>Sorry but we couldn't find this page</h2>
+              <p>This page you are looking for does not exist <a href="#">Report this?</a>
+              </p>
+              <div class="mid_center">
+                <h3>Search</h3>
+                <form>
+                  <div class="  form-group pull-right top_search">
+                    <div class="input-group">
+                      <input type="text" class="form-control" placeholder="Search for..">
+                      <span class="input-group-btn">
+                              <button class="btn btn-secondary" type="button">Go!</button>
+                          </span>
+                    </div>
+                  </div>
+                </form>
               </div>
             </div>
-            <!-- /.input-group -->
-          </form>
+          </div>
         </div>
-        <!-- /.error-content -->
+        <!-- /page content -->
       </div>
-      <!-- /.error-page -->
-    </section>
-    <!-- /.content -->
-  </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="./vendors/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+   <script src="./vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- FastClick -->
+    <script src="./vendors/fastclick/lib/fastclick.js"></script>
+    <!-- NProgress -->
+    <script src="./vendors/nprogress/nprogress.js"></script>
+
+    <!-- Custom Theme Scripts -->
+    <script src="./build/js/custom.min.js"></script>
+  </body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Gentelella Alela! | </title>
+
+    <!-- Bootstrap -->
+    <link href="./vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="./vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="./vendors/nprogress/nprogress.css" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link href="./build/css/custom.min.css" rel="stylesheet">
+  </head>
+
+  <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+        <!-- page content -->
+        <div class="col-md-12">
+          <div class="col-middle">
+            <div class="text-center text-center">
+              <h1 class="error-number">404</h1>
+              <h2>lo sentimos, pagina no encontrada</h2>
+              <p>This page you are looking for does not exist <a href="#">Report this?</a>
+              </p>
+              <div class="mid_center">
+                <h3>Search</h3>
+                <form>
+                  <div class="  form-group pull-right top_search">
+                    <div class="input-group">
+                      <input type="text" class="form-control" placeholder="Search for..">
+                      <span class="input-group-btn">
+                              <button class="btn btn-secondary" type="button">Go!</button>
+                          </span>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /page content -->
+      </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="./vendors/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+   <script src="./vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- FastClick -->
+    <script src="./vendors/fastclick/lib/fastclick.js"></script>
+    <!-- NProgress -->
+    <script src="./vendors/nprogress/nprogress.js"></script>
+
+    <!-- Custom Theme Scripts -->
+    <script src="./build/js/custom.min.js"></script>
+  </body>
+</html>
