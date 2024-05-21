@@ -4,7 +4,7 @@ class ControladorPlantilla{
 
     public static function controladorPlantilla(){
 
-        include "vistas/plantilla.php";
+        include "views/template.php";
 
     }
 
