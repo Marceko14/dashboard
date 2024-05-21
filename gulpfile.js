@@ -1,74 +1,60 @@
-const gulp = require("gulp");
-const gap = require("gulp-append-prepend");
+var gulp = require('gulp'),
+    concat = require('gulp-concat'),
+    uglify = require('gulp-uglify'),
+    rename = require('gulp-rename'),
+    sass = require('gulp-ruby-sass'),
+    autoprefixer = require('gulp-autoprefixer'),
+    browserSync = require('browser-sync').create();
 
-gulp.task("licenses", async function() {
-  // this is to add Creative Tim licenses in the production mode for the minified js
-  gulp
-    .src("build/static/js/*chunk.js", { base: "./" })
-    .pipe(
-      gap.prependText(`/*!
+var DEST = 'build/';
 
-=========================================================
-* Material Dashboard React - v1.9.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-dashboard-react
-* Copyright 2020 Creative Tim (http://www.creative-tim.com)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/`)
-    )
-    .pipe(gulp.dest("./", { overwrite: true }));
-
-  // this is to add Creative Tim licenses in the production mode for the minified html
-  gulp
-    .src("build/index.html", { base: "./" })
-    .pipe(
-      gap.prependText(`<!--
-
-=========================================================
-* Material Dashboard React - v1.9.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-dashboard-react
-* Copyright 2020 Creative Tim (http://www.creative-tim.com)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
--->`)
-    )
-    .pipe(gulp.dest("./", { overwrite: true }));
-
-  // this is to add Creative Tim licenses in the production mode for the minified css
-  gulp
-    .src("build/static/css/*chunk.css", { base: "./" })
-    .pipe(
-      gap.prependText(`/*!
-
-=========================================================
-* Material Dashboard React - v1.9.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-dashboard-react
-* Copyright 2020 Creative Tim (http://www.creative-tim.com)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/`)
-    )
-    .pipe(gulp.dest("./", { overwrite: true }));
-  return;
+gulp.task('scripts', function() {
+    return gulp.src([
+        'src/js/helpers/*.js',
+        'src/js/*.js',
+      ])
+      .pipe(concat('custom.js'))
+      .pipe(gulp.dest(DEST+'/js'))
+      .pipe(rename({suffix: '.min'}))
+      .pipe(uglify())
+      .pipe(gulp.dest(DEST+'/js'))
+      .pipe(browserSync.stream());
 });
+
+// TODO: Maybe we can simplify how sass compile the minify and unminify version
+var compileSASS = function (filename, options) {
+  return sass('src/scss/*.scss', options)
+        .pipe(autoprefixer('last 2 versions', '> 5%'))
+        .pipe(concat(filename))
+        .pipe(gulp.dest(DEST+'/css'))
+        .pipe(browserSync.stream());
+};
+
+gulp.task('sass', function() {
+    return compileSASS('custom.css', {});
+});
+
+gulp.task('sass-minify', function() {
+    return compileSASS('custom.min.css', {style: 'compressed'});
+});
+
+gulp.task('browser-sync', function() {
+    browserSync.init({
+        server: {
+            baseDir: './'
+        },
+        startPath: './production/index.html'
+    });
+});
+
+gulp.task('watch', function() {
+  // Watch .html files
+  gulp.watch('production/*.html', browserSync.reload);
+  // Watch .js files
+  gulp.watch('src/js/*.js', ['scripts']);
+  // Watch .scss files
+  gulp.watch('src/scss/*.scss', ['sass', 'sass-minify']);
+});
+
+// Default Task
+gulp.task('default', gulp.series('browser-sync', 'watch'));
