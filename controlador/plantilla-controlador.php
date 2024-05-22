@@ -1,8 +1,9 @@
 <?php
 
 class ControladorPlantilla{
+    public function __construct(){}
 
-    public static function controladorPlantilla(){
+    public function controladorPlantilla(){
 
         include "vistas/plantilla.php";
 
