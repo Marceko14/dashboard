@@ -14,7 +14,7 @@ class ControladorUsuarios{
                 $item = "usuario";
                 $valor = $_POST["ingUsuario"];
                 //INSTANCIAR 
-                $respuesta = new ModeloUsuarios:: ModeloMostrarUsuarios($tabla,$item,$valor);
+                $respuesta = ModeloUsuarios::modeloMostrarUsuarios($tabla,$item,$valor);
                 
                 
             
