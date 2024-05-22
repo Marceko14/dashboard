@@ -1,10 +1,7 @@
 <?php
 
 //controlador
-require_once "controller/plantilla-controlador.php";
-
-
-//
+require_once "controlador/plantilla-controlador.php";
 
 //instanciar
 $plantilla = new ControladorPlantilla();
